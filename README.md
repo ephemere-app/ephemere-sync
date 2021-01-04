@@ -24,13 +24,13 @@ $ npm run start
 ### Build
 
 ```
-docker build -t ephemere/ephemere-sync:latest .
+docker build -t ephemereapp/ephemere-sync:latest .
 ```
 
 ### Run
 
 ```
-docker run --rm --env-file .env -p 9000:9000 ephemere/ephemere-sync:latest
+docker run --rm --env-file .env -p 9000:9000 ephemereapp/ephemere-sync:latest
 ```
 
 ## Scaling
