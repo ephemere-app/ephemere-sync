@@ -29,6 +29,13 @@ app.use((req, res, next) => {
   next()
 })
 app.use(pinoHttp())
+app.get("/", (req, res) => {
+  res.status(200).json({
+    name: process.env.npm_package_name,
+    description: process.env.npm_package_description,
+    version: process.env.npm_package_version,
+  })
+})
 
 const server = http.createServer(app)
 server.listen(port, () => {
