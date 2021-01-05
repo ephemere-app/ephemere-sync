@@ -2,6 +2,10 @@
 
 > Open a secure line
 
+[![GitHub Tag](https://img.shields.io/github/tag/ephemere-app/ephemere-sync.svg)](https://github.com/ephemere-app/ephemere-sync/releases/latest)
+[![GitHub Action CI/CD](https://github.com/ephemere-app/ephemere-sync/workflows/CI/CD/badge.svg)](https://github.com/ephemere-app/ephemere-sync/actions?query=workflow%3A%22CI%2FCD%22)
+[![License](https://img.shields.io/github/license/ephemere-app/ephemere-sync)](https://github.com/ephemere-app/ephemere-sync/blob/master/LICENSE)
+
 Synchronize end-to-end encrypted and ephemeral messages from
 Ephemere using [Socket-io](https://socket.io).
 
