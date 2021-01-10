@@ -1,1 +1,1 @@
-FROM ephemereapp/ephemere-sync:0.1.0
+FROM ephemereapp/ephemere-sync:0.1.1
