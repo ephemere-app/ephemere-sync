@@ -6,4 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/ephemere-app/ephemere-sync/compare/HEAD
+## [0.1.0] - 2021-01-10
+### Added
+- Initial release of `@ephemere/sync`
+
+[Unreleased]: https://github.com/ephemere-app/ephemere-sync/compare/0.1.2...HEAD
+[0.1.0]: https://github.com/ephemere-app/ephemere-sync/releases/tag/0.1.0
