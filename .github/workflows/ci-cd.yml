@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Select Docker image tag (production only)
         if: contains(github.ref, 'tags')
-        run: echo "::set-env name=IMAGE_TAG::${GITHUB_REF##*/}"
+        run: echo "IMAGE_TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: Log into Docker Registry
         run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
       - name: Pull latest Docker image
@@ -100,9 +100,9 @@ jobs:
           HEROKU_APP_ID: ${{ secrets.HEROKU_APP_ID_PRODUCTION }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
+          $IMAGE_TAG=${GITHUB_REF##*/}
           sudo apt-get install --assume-yes --no-install-recommends curl
           echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          echo "::set-env name=IMAGE_TAG::${GITHUB_REF##*/}"
           docker pull $IMAGE_NAME:$IMAGE_TAG
           docker tag $IMAGE_NAME:$IMAGE_TAG registry.heroku.com/$HEROKU_APP_ID
           IMAGE_ID=$(docker inspect $IMAGE_NAME:$IMAGE_TAG --format="{{.Id}}")
